@@ -10,18 +10,18 @@ namespace ConsoleApp
 		// values given the same inputs.
 
 		// also this code is not easily testable
-		public DateTime GetCurrentTimeRoundedUpToCustomMinuteInterval(int interval)
+		public DateTime GetCurrentTimeRoundedUpToCustomMinuteInterval(int interval, DateTime startTime)
 		{
-			var currentTime = DateTime.Now;
+			// var currentTime = DateTime.Now;
 			var minutesSpan = TimeSpan.FromMinutes(interval).Ticks;
 
-			if (currentTime.Ticks % minutesSpan == 0)
+			if (startTime.Ticks % minutesSpan == 0)
 			{
-				return currentTime;
+				return startTime;
 			}
 			else
 			{
-				return new DateTime((currentTime.Ticks / minutesSpan + 1) * minutesSpan);
+				return new DateTime((startTime.Ticks / minutesSpan + 1) * minutesSpan);
 			}
 
 		}

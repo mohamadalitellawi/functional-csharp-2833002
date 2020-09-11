@@ -19,7 +19,7 @@ namespace ConsoleApp
 			Console.Clear();
 			Console.WriteLine(DateTime.Now);
 			var result = 
-				examples.GetCurrentTimeRoundedUpToCustomMinuteInterval(4);
+				examples.GetCurrentTimeRoundedUpToCustomMinuteInterval(4, DateTime.Now);
 			Console.WriteLine(result);
 		}
 		
