@@ -23,6 +23,8 @@ namespace ConsoleApp
 			var robots = GetRobots();
 			int total = GetTotalWeight(robots);
 
+			var redRobots = ImmutableList.Create(robots.Where(x => x.TeamName == "Red").ToArray());
+			Console.WriteLine(GetTotalWeight(redRobots));
 
 			//var blueRobots = ImmutableList.Create(robots.Where(x => x.TeamName == "Blue").ToArray());
 			//int blueTeamTotal = GetTotalWeight(blueRobots);
